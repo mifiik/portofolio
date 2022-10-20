@@ -1,0 +1,72 @@
+@import "./variables.scss";
+
+.navigation {
+   @extend .element_row;
+   justify-content: space-between;
+   padding: 2% 10% 1% 10%;
+   background-color: $primary-color;
+   &_block {
+      @extend .element_row;
+      gap: 70px;
+   }
+   &_block_logo {
+      // @include font-style(28px, 600, 0, $white);
+      @include font-style(28px, 600, 0, 0, $white);
+      padding-top: 3%;
+      a {
+         color: $white;
+         @include breakpoint(sxl) {
+            color: red;
+         }
+      }
+   }
+   &_block_list {
+      @extend .element_row;
+      justify-content: flex-start;
+      gap: 10px;
+      li {
+         padding-top: 2.5%;
+         a {
+            @include font-style(12px, 600, 0, 0, $white);
+         }
+         a:hover {
+            color: $secondary-color;
+            border-bottom: 1px solid $secondary-color;
+         }
+      }
+   }
+
+   &_phone {
+      @extend .element_row;
+      gap: 20px;
+   }
+   &_phone_ikon {
+      @include circle(50px, 50px, 50%, $white);
+      // width: 50px;
+      // height: 50px;
+      // border-radius: 50%;
+      // background-color: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+         font-size: 25px;
+      }
+   }
+
+   &_phone_number {
+      padding: 10px 25px;
+      border-radius: 20px;
+      border: 2px solid $white;
+      a {
+         // @include font-style(18px, 700, 1px, $white);
+         @include font-style(18px, 700, 1px, 0, $white);
+      }
+   }
+   &_phone_number:hover {
+      background-color: $white;
+      a {
+         color: $secondary-color;
+      }
+   }
+}

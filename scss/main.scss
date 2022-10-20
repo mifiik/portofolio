@@ -1,0 +1,264 @@
+@import "./variables.scss";
+
+.about {
+   @extend .element_row;
+   justify-content: space-between;
+   background-color: $secondary-color;
+   padding: 5% 10% 10% 10%;
+   &_left_hello {
+      @extend .element_row;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+   }
+   &_left_hello_foto {
+      @include circle(90px, 90px, 50%, 0);
+      overflow: hidden;
+   }
+   &_left_hello_friend {
+      @include font-style(34px, 900, 0, 1.2, 0);
+      height: fit-content;
+      padding: 8px 24px;
+      border-radius: 30px;
+      background-color: $white;
+   }
+   &_left_availabel {
+      background-color: $white;
+      border-radius: 25px;
+      padding: 4px 14px;
+      margin-bottom: 10px;
+      p {
+         @include font-style(34px, 900, 0, 1.2, $secondary-color);
+      }
+   }
+   &_left_btn {
+      padding: 12px 24px;
+      background-color: $primary-color;
+      width: fit-content;
+      border-radius: 25px;
+      a {
+         display: block;
+         @include font-style(18px, 500, 0, 1, $white);
+      }
+   }
+   &_left_btn:hover {
+      background-color: $secondary-color;
+   }
+}
+.about_right {
+   position: relative;
+   width: 50%;
+   border: 1px solid red;
+   &_circle {
+      @include circle(367px, 367px, 50%, $white);
+      margin-left: 15%;
+   }
+   &_foto {
+      position: absolute;
+      width: 550px;
+      height: 367px;
+      top: 20%;
+      left: 5%;
+      z-index: 2;
+   }
+}
+
+.history {
+   @extend .element_row;
+   justify-content: space-between;
+   gap: 50px;
+   padding: 9% 10% 15% 10%;
+}
+.history_left {
+   width: 50%;
+   &_foto {
+      border: 1px solid red;
+      border-radius: 20px;
+      height: 400px;
+      overflow: hidden;
+   }
+}
+.history_right {
+   width: 50%;
+   .history_right_story {
+      border: 1px solid red;
+      @extend .element_row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: fit-content;
+      background-color: $secondary-color;
+      border-radius: 20px;
+      padding: 2% 5% 2% 18%;
+      margin-bottom: 10%;
+      p {
+         @include font-style(35px, 900, 1px, 1.5, $white);
+      }
+   }
+   &_story_foto {
+      @include circle(160px, 160px, 50%, 0);
+      overflow: hidden;
+   }
+   &_title {
+      @include font-style(36px, 900, 2px, 0, 0);
+      margin-bottom: 8%;
+   }
+   &_text {
+      p {
+         @include font-style(20px, 400, 1px, 1.4, rgb(113, 114, 117));
+         margin-bottom: 2%;
+      }
+   }
+}
+
+.date {
+   @extend .element_row;
+   gap: 30px;
+   background-color: rgb(248, 249, 250);
+   border-bottom: 1px solid rgb(233, 236, 239);
+   border-top: 1px solid rgb(233, 236, 239);
+   padding: 10%;
+   &_left {
+      width: 50%;
+      border: 1px solid rgb(233, 236, 239);
+      border-radius: 20px;
+      overflow: hidden;
+      // height: fit-content;
+   }
+   &_left_inf {
+      @include font-style(30px, 900, 1px, 0, 0);
+      padding: 30px;
+   }
+   &_left_list {
+      @extend .element_row;
+      // gap: 10px;
+      border-top: 1px solid rgb(233, 236, 239);
+      // padding-right: 30px;
+   }
+   &_left_list_name {
+      @include font-style(25px, 600, 0, 2, $secondary-color);
+      text-align: center;
+      border-right: 1px solid rgb(233, 236, 239);
+   }
+   &_left_list_joshua {
+      @include font-style(20px, 400, 0, 2.5, 0);
+      color: rgb(129, 133, 136);
+      width: 100%;
+      a {
+         @include font-style(20px, 400, 0, 2.5, 0);
+         color: rgb(129, 133, 136);
+      }
+   }
+   &_left_list_name li:nth-child(odd),
+   &_left_list_joshua li:nth-child(odd) {
+      padding: 0 30px;
+      width: 100%;
+   }
+   &_left_list_name li:nth-child(even),
+   &_left_list_joshua li:nth-child(even) {
+      background-color: rgb(255, 255, 255);
+      padding: 0 30px;
+   }
+   &_left_list_joshua li a:hover,
+   &_left_list_joshua li a:hover {
+      color: $secondary-color;
+   }
+
+   &_right {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      strong {
+         display: block;
+         @include font-style(60px, 900, 0, 1, 0);
+      }
+      p {
+         font-size: 20px;
+         color: $secondary-color;
+      }
+      &_first {
+         display: flex;
+         &_block1 {
+            border-right: 1px solid rgb(233, 236, 239);
+            border-bottom: 1px solid rgb(233, 236, 239);
+            width: 50%;
+            padding: 0 30px 20px 0;
+         }
+         &_block2 {
+            width: 50%;
+            padding-left: 40px;
+            border-bottom: 1px solid rgb(233, 236, 239);
+         }
+      }
+      &_second {
+         @extend .element_row;
+         &_block3 {
+            width: 50%;
+            padding-top: 20px;
+            border-right: 1px solid rgb(233, 236, 239);
+         }
+         &_block4 {
+            // border-left: 1px solid rgb(233, 236, 239);
+            // border-top: 1px solid rgb(233, 236, 239);
+            padding: 20px 0 0 50px;
+            width: 50%;
+         }
+      }
+   }
+}
+
+.companies {
+   padding: 10%;
+   p {
+      @include font-style(40px, 700, 0, 0, 0);
+      text-align: center;
+      margin-bottom: 40px;
+   }
+   &_logo {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      font-size: 100px;
+      i:hover {
+         transform: scale(1.5);
+         transition: 1s;
+      }
+   }
+}
+
+.block {
+   border-top: 1px solid #000;
+   border-bottom: 1px solid #000;
+   background-color: rgb(255, 255, 255);
+   padding: 8% 15% 10% 15%;
+   margin-bottom: 10%;
+   &_services {
+      @extend .element_row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background-color: $secondary-color;
+      border-radius: 10px;
+      padding: 10px;
+      &_img {
+         @include circle(160px, 160px, 50%, 0);
+         overflow: hidden;
+      }
+      p {
+         @include font-style(45px, 800, 1px, 1, $white);
+      }
+   }
+   &_cards {
+      background-color: $white;
+      border-radius: 20px;
+      &_websites_title {
+         span {
+            display: block;
+            @include font-style(35px, 800, 1px, 1, rgb(0, 0, 0));
+         }
+         @extend .element_row;
+         justify-content: space-between;
+      }
+   }
+}
